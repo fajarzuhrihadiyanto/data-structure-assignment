@@ -29,8 +29,18 @@ public class ArrayApp {
     public static void main(String[] args){
         // INITIALIZE ARRAY VALUE AND SET THE NUMBER OF ELEMENTS BY ARRAY LENGTH
         long[] arr;
-        arr = new long[] {77, 99, 44, 55, 22, 88, 11, 0, 66, 33};
-        int nElems = arr.length;
+        arr = new long[100];
+        arr[0] = 77;
+        arr[1] = 99;
+        arr[2] = 44;
+        arr[3] = 55;
+        arr[4] = 22;
+        arr[5] = 88;
+        arr[6] = 11;
+        arr[7] = 0;
+        arr[8] = 66;
+        arr[9] = 33;
+        int nElems = 10;
 
         // DECLARE ANOTHER VARIABLE
         int j;
