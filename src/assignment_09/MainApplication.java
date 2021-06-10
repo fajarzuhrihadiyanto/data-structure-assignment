@@ -84,10 +84,11 @@ public class MainApplication {
         functions = new HashMap<>();
         functions.put(1, new Function("Add Data", MainApplication::addData));
         functions.put(2, new Function("Remove Data", MainApplication::removeData));
-        functions.put(3, new Function("Inorder Traverse", MainApplication::displayInorder));
-        functions.put(4, new Function("Preorder Traverse", MainApplication::displayPreorder));
-        functions.put(5, new Function("Postorder Traverse", MainApplication::displayPostorder));
-        functions.put(6, new Function("Program Exit", MainApplication::programExit));
+        functions.put(3, new Function("Search Data", MainApplication::searchData));
+        functions.put(4, new Function("Inorder Traverse", MainApplication::displayInorder));
+        functions.put(5, new Function("Preorder Traverse", MainApplication::displayPreorder));
+        functions.put(6, new Function("Postorder Traverse", MainApplication::displayPostorder));
+        functions.put(7, new Function("Program Exit", MainApplication::programExit));
     }
 
     /**
@@ -161,8 +162,13 @@ public class MainApplication {
      * This method is used to remove data in the bst.
      * */
     private static void removeData() {
-        int indexData = promptInt("Input data to be deleted : ");
-        data.remove(indexData);
+        int tempData = promptInt("Input data to be deleted : ");
+        data.remove(tempData);
+    }
+
+    private static void searchData() {
+        int tempData = promptInt("Input data to be looked for : ");
+        System.out.println(tempData + (data.find(tempData) ? " found " : " not found ") + "in the tree");
     }
 
     /**
@@ -189,9 +195,9 @@ public class MainApplication {
      * then, run the corresponding function.
      * */
     private static void programSwitcher() {
-        int indexMenu = promptInt("Choose Menu [1 - 6]: ");
+        int indexMenu = promptInt("Choose Menu [1 - 7]: ");
 
-        if (1 <= indexMenu && indexMenu <= 6)
+        if (1 <= indexMenu && indexMenu <= 7)
             functions.get(indexMenu).run();
 
         programMenu();
